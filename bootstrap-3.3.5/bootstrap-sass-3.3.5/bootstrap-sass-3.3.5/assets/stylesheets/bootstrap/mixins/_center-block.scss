@@ -1,0 +1,7 @@
+// Center-align a block level element
+//居中显示一个块元素
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

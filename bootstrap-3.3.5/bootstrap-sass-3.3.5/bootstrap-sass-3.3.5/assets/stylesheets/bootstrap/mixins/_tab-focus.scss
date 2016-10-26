@@ -1,0 +1,9 @@
+// WebKit-style focus          获得焦点的样式        已经
+
+@mixin tab-focus() {
+  // Default
+  outline: thin dotted;
+  // WebKit
+  outline: 5px auto -webkit-focus-ring-color;        //表单高光效果    http://www.365mini.com/page/input-focus-highlight.htm
+  outline-offset: -2px;                         //outline-offset属性设置轮廓框架在 border 边缘外的偏移 IE不兼容
+}

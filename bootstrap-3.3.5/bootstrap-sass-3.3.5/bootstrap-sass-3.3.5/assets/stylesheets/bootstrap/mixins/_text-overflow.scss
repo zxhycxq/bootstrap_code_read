@@ -1,0 +1,8 @@
+// Text overflow         溢出隐藏 省略号
+// Requires inline-block or block for proper styling
+//http://caibaojian.com/css-white-space.html
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

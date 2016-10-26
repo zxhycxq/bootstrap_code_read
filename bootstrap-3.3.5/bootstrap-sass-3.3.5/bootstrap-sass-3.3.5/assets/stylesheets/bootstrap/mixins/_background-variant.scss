@@ -1,0 +1,14 @@
+// Contextual backgrounds
+//可选的行属性
+//选择情景(contextual)类为表格添加颜色
+
+// [converter] $parent hack
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color;
+  }
+  a#{$parent}:hover,
+  a#{$parent}:focus {
+    background-color: darken($color, 10%);
+  }
+}
