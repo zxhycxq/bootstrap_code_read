@@ -4,6 +4,8 @@
 
 
 // Inline and block code styles
+//<samp> 标签并不经常使用。只有在要从正常的上下文中将某些短字符序列提取出来，对它们加以强调的极少情况下，才使用这个标签。
+//表示文本是从键盘上键入的
 code,
 kbd,
 pre,
@@ -61,7 +63,7 @@ pre {
     border-radius: 0;
   }
 }
-
+//代码超过高度 滚动
 // Enable scrollable blocks of code
 .pre-scrollable {
   max-height: $pre-scrollable-max-height;

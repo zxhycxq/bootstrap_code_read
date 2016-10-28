@@ -1,5 +1,6 @@
 //
-// Typography
+// Typography    排印，印刷样式;
+
 // --------------------------------------------------
 
 
@@ -79,7 +80,7 @@ small,
 .small {
   font-size: floor((100% * $font-size-small / $font-size-base));
 }
-
+//<mark> 标签定义带有记号的文本。请在需要突出显示文本时使用 <m> 标签。 html5 新标签
 mark,
 .mark {
   background-color: $state-warning-bg;
@@ -93,10 +94,10 @@ mark,
 .text-justify        { text-align: justify; }
 .text-nowrap         { white-space: nowrap; }
 
-// Transformation
+// Transformation                             此属性对中文无意义
 .text-lowercase      { text-transform: lowercase; }
 .text-uppercase      { text-transform: uppercase; }
-.text-capitalize     { text-transform: capitalize; }
+.text-capitalize     { text-transform: capitalize; }        // 首字母大写
 
 // Contextual colors
 .text-muted {
@@ -133,7 +134,7 @@ mark,
 
 
 // Page header
-// -------------------------
+// -------------------------     page-header会在网页标题四周添加适当的间距
 
 .page-header {
   padding-bottom: (($line-height-computed / 2) - 1);
@@ -232,6 +233,7 @@ abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted $abbr-border-color;
 }
+//词首字母缩略词
 .initialism {
   font-size: 90%;
   @extend .text-uppercase;
@@ -268,7 +270,7 @@ blockquote {
   }
 }
 
-// Opposite alignment of blockquote
+// Opposite alignment of blockquote      对面的; 相对的;
 //
 // Heads up: `blockquote.pull-right` has been deprecated as of v3.1.0.
 .blockquote-reverse,
@@ -279,7 +281,7 @@ blockquote.pull-right {
   border-left: 0;
   text-align: right;
 
-  // Account for citation
+  // Account for citation     引文; 引用; 引
   footer,
   small,
   .small {

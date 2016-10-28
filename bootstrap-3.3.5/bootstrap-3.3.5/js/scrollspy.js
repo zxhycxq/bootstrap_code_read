@@ -33,7 +33,7 @@
   ScrollSpy.DEFAULTS = {
     offset: 10
   }
-
+  //获得滚动高度
   ScrollSpy.prototype.getScrollHeight = function () {
     return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
   }
@@ -46,7 +46,7 @@
     this.offsets      = []
     this.targets      = []
     this.scrollHeight = this.getScrollHeight()
-
+    //jQuery.isWindow()函数用于判断指定参数是否是一个窗口。 "窗口"就是浏览器内置的Window对象
     if (!$.isWindow(this.$scrollElement[0])) {
       offsetMethod = 'position'
       offsetBase   = this.$scrollElement.scrollTop()

@@ -1,5 +1,6 @@
 // Grid system
-//
+//                              >语义的，语义学的;
+
 // Generate semantic grid columns with these mixins.
 
 // Centered container element
@@ -10,14 +11,14 @@
   padding-right: ($gutter / 2);
   @include clearfix;
 }
-
+// 给各列一个容器
 // Creates a wrapper for a series of columns
 @mixin make-row($gutter: $grid-gutter-width) {
   margin-left:  ceil(($gutter / -2));
   margin-right: floor(($gutter / -2));
   @include clearfix;
 }
-
+//小的列         以及列偏移
 // Generate the extra small columns
 @mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
   position: relative;
@@ -27,6 +28,7 @@
   padding-left:  ($gutter / 2);
   padding-right: ($gutter / 2);
 }
+//todo 这几个的区别
 @mixin make-xs-column-offset($columns) {
   margin-left: percentage(($columns / $grid-columns));
 }

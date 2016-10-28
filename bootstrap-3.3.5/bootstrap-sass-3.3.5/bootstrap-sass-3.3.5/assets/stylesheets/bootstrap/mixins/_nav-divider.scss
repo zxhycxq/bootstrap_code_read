@@ -1,7 +1,7 @@
 // Horizontal dividers
 //
 // Dividers (basically an hr) within dropdowns and nav lists
-
+//                      水平分割线   导航列表和下拉菜单里面的hr
 @mixin nav-divider($color: #e5e5e5) {
   height: 1px;
   margin: (($line-height-computed / 2) - 1) 0;

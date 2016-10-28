@@ -1,8 +1,8 @@
 // Button variants
-//
+//       按钮相关的变量设置      从默认变量中抽出   为所有的按钮添加禁用选项  获得焦点、hover 激活
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
-
+//           颜色、背景颜色、边框颜色
 @mixin button-variant($color, $background, $border) {
   color: $color;
   background-color: $background;
@@ -19,6 +19,7 @@
     background-color: darken($background, 10%);
         border-color: darken($border, 12%);
   }
+  //todo 注意下这个 dropdown-toggle
   &:active,
   &.active,
   .open > &.dropdown-toggle {
@@ -41,6 +42,8 @@
   }
   &.disabled,
   &[disabled],
+  /*  找最先出处  fieldset 元素可将表单内的相关元素分组。
+<fieldset> 标签将表单内容的一部分打包，生成一组相关表单的字段。*/
   fieldset[disabled] & {
     &,
     &:hover,
@@ -59,7 +62,7 @@
   }
 }
 
-// Button sizes
+// Button sizes       按钮大小             水平padding 垂直padding  行高 圆角
 @mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
   padding: $padding-vertical $padding-horizontal;
   font-size: $font-size;

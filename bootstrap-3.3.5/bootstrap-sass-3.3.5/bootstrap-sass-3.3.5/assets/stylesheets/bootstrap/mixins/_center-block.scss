@@ -1,5 +1,5 @@
 // Center-align a block level element
-//居中显示一个块元素
+//居中显示一个块元素     没有用margin ：0 auto
 @mixin center-block() {
   display: block;
   margin-left: auto;
