@@ -92,6 +92,8 @@
   }
 
   Dropdown.prototype.keydown = function (e) {
+    //  针对键盘和鼠标事件，这个属性能确定你到底按的是哪个键。
+    //   http://www.jquery123.com/event.which/
     if (!/(38|40|27|32)/.test(e.which) || /input|textarea/i.test(e.target.tagName)) return
 
     var $this = $(this)

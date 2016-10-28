@@ -12,14 +12,14 @@
 
   // ALERT CLASS DEFINITION
   // ======================
-
+  //dismiss
   var dismiss = '[data-dismiss="alert"]'
   var Alert   = function (el) {
     $(el).on('click', dismiss, this.close)
   }
 
   Alert.VERSION = '3.3.5'
-
+  //transition-duration
   Alert.TRANSITION_DURATION = 150
 
   Alert.prototype.close = function (e) {
@@ -36,17 +36,19 @@
     if (e) e.preventDefault()
 
     if (!$parent.length) {
+      //  http://www.jquery123.com/closest/
       $parent = $this.closest('.alert')
     }
 
     $parent.trigger(e = $.Event('close.bs.alert'))
-
+    //event.isDefaultPrevented() 方法检查指定的事件上是否调用了 preventDefault() 方法。
     if (e.isDefaultPrevented()) return
 
     $parent.removeClass('in')
 
     function removeElement() {
       // detach from parent, fire event then clean up data
+      //  从DOM中去掉所有匹配的元素。
       $parent.detach().trigger('closed.bs.alert').remove()
     }
 

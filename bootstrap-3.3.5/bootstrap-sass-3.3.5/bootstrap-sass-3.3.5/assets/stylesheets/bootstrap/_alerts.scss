@@ -15,15 +15,16 @@
   // Headings for larger alerts
   h4 {
     margin-top: 0;
+    // 防止$headings-color颜色改变时候的冲突
     // Specified for the h4 to prevent conflicts of changing $headings-color
     color: inherit;
   }
-
+  //链接
   // Provide class for links that match alerts
   .alert-link {
     font-weight: $alert-link-font-weight;
   }
-
+  //改善
   // Improve alignment and spacing of inner content
   > p,
   > ul {
@@ -51,11 +52,12 @@
     color: inherit;
   }
 }
+//adj.	交替的; 轮流的; 间隔的; 代替的;
 
 // Alternate styles
 //
 // Generate contextual modifier classes for colorizing the alert.
-
+//四种颜色 背景、边框、文本
 .alert-success {
   @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
 }
