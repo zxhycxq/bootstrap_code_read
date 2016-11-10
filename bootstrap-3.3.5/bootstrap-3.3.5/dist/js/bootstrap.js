@@ -3,7 +3,7 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under the MIT license
  */
-
+////加载之前得先加载jquery，否则会报错
 if (typeof jQuery === 'undefined') {
   throw new Error('Bootstrap\'s JavaScript requires jQuery')
 }
