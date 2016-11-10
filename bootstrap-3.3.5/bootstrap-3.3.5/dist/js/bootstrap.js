@@ -10,6 +10,9 @@ if (typeof jQuery === 'undefined') {
 
 +function ($) {
   'use strict';
+  //检查jquery的版本号。
+  // 如果版本号小于 1.9 或者小于1.9.1
+  //否则提示 其至少需要1.9.1及更高版本
   var version = $.fn.jquery.split(' ')[0].split('.')
   if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1)) {
     throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher')
