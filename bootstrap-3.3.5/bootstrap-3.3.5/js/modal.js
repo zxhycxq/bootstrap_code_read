@@ -145,7 +145,7 @@
         }
       }, this))
   }
-
+  //退出
   Modal.prototype.escape = function () {
     if (this.isShown && this.options.keyboard) {
       this.$element.on('keydown.dismiss.bs.modal', $.proxy(function (e) {

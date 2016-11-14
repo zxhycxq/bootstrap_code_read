@@ -1,3 +1,5 @@
+// Module - ECMAScript 6入门
+// http://es6.ruanyifeng.com/#docs/module#import￥ﾑﾽ￤ﾻﾤ
 import Util from './util'
 
 
@@ -56,7 +58,14 @@ const Alert = (($) => {
 
 
     // getters
-
+     /*
+     * ## Class的静态方法
+      1056
+      1057	类相当于实例的原型，所有在类中定义的方法，都会被实例继承。
+      如果在一个方法前，加上`static`关键字，就表示该方法不会被实例继承，
+      而是直接通过类来调用，这就称为“静态方法”。
+     *
+     * */
     static get VERSION() {
       return VERSION
     }

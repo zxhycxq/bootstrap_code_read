@@ -38,7 +38,7 @@
     // push to event loop to allow forms to submit
     setTimeout($.proxy(function () {
       $el[val](data[state] == null ? this.options[state] : data[state])
-
+      //如果状态是正在加载中，那么禁用
       if (state == 'loadingText') {
         this.isLoading = true
         $el.addClass(d).attr(d, d)
@@ -50,15 +50,21 @@
   }
 
   Button.prototype.toggle = function () {
+    // 设置当前状态
     var changed = true
     var $parent = this.$element.closest('[data-toggle="buttons"]')
 
     if ($parent.length) {
+      //input 并且radio
       var $input = this.$element.find('input')
       if ($input.prop('type') == 'radio') {
         if ($input.prop('checked')) changed = false
         $parent.find('.active').removeClass('active')
         this.$element.addClass('active')
+      //  checkbox 并且check
+      //  prop() 方法设置或返回被选元素的属性和值。
+      //   jquery中prop()方法和attr()方法的区别浅析_基础知识_脚本之家  http://www.jb51.net/article/41170.htm
+      //   http://www.runoob.com/try/try.php?filename=tryjquery_html_prop_attr
       } else if ($input.prop('type') == 'checkbox') {
         if (($input.prop('checked')) !== this.$element.hasClass('active')) changed = false
         this.$element.toggleClass('active')

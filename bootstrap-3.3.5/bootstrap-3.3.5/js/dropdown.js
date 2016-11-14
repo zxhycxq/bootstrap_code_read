@@ -57,7 +57,7 @@
 
   Dropdown.prototype.toggle = function (e) {
     var $this = $(this)
-
+    //被禁用了，返回
     if ($this.is('.disabled, :disabled')) return
 
     var $parent  = getParent($this)
@@ -92,6 +92,7 @@
   }
 
   Dropdown.prototype.keydown = function (e) {
+    //键盘的方向键上下、空格、
     if (!/(38|40|27|32)/.test(e.which) || /input|textarea/i.test(e.target.tagName)) return
 
     var $this = $(this)
@@ -115,7 +116,7 @@
     if (!$items.length) return
 
     var index = $items.index(e.target)
-
+    //上、下
     if (e.which == 38 && index > 0)                 index--         // up
     if (e.which == 40 && index < $items.length - 1) index++         // down
     if (!~index)                                    index = 0

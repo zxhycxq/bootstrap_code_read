@@ -14,8 +14,15 @@
   // ======================
 
   var Affix = function (element, options) {
-    this.options = $.extend({}, Affix.DEFAULTS, options)
+    // 为jQuery类添加类方法，可以理解为添加静态方法
+    /*这样做的目的是为了保护包默认参数。也就是defaults里面的参数。
 
+做法是将一个新的空对象（{}）做为$.extend的第一个参数，defaults和用户传递的参数对象紧随其后，
+    这样做的好处是所有值被合并到这个空对象上，保护了插件里面的默认值。*/
+
+    this.options = $.extend({}, Affix.DEFAULTS, options)
+   /* jquery $.proxy使用 - 浪漫小生 - 博客园  http://www.cnblogs.com/hongchenok/p/3919497.html
+      jQuery.proxy(),接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文(context )语境。*/
     this.$target = $(this.options.target)
       .on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this))
       .on('click.bs.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this))
