@@ -40,7 +40,7 @@
     wrap: true,
     keyboard: true
   }
-
+  //方向键
   Carousel.prototype.keydown = function (e) {
     if (/input|textarea/i.test(e.target.tagName)) return
     switch (e.which) {
@@ -51,10 +51,10 @@
 
     e.preventDefault()
   }
-
+  //循环
   Carousel.prototype.cycle = function (e) {
     e || (this.paused = false)
-
+    //定时器
     this.interval && clearInterval(this.interval)
 
     this.options.interval
@@ -63,7 +63,7 @@
 
     return this
   }
-
+  //得到当前的索引值
   Carousel.prototype.getItemIndex = function (item) {
     this.$items = item.parent().children('.item')
     return this.$items.index(item || this.$active)
@@ -78,9 +78,10 @@
     var itemIndex = (activeIndex + delta) % this.$items.length
     return this.$items.eq(itemIndex)
   }
-
+  //指定第一章幻灯片
   Carousel.prototype.to = function (pos) {
     var that        = this
+    //  当前激活的索引
     var activeIndex = this.getItemIndex(this.$active = this.$element.find('.item.active'))
 
     if (pos > (this.$items.length - 1) || pos < 0) return
@@ -90,7 +91,7 @@
 
     return this.slide(pos > activeIndex ? 'next' : 'prev', this.$items.eq(pos))
   }
-
+  //暂停
   Carousel.prototype.pause = function (e) {
     e || (this.paused = true)
 

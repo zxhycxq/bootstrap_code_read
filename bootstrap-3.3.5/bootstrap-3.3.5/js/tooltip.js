@@ -435,7 +435,7 @@
   Tooltip.prototype.arrow = function () {
     return (this.$arrow = this.$arrow || this.tip().find('.tooltip-arrow'))
   }
-  //启用与禁用
+  //启用与禁用及状态切换j
   Tooltip.prototype.enable = function () {
     this.enabled = true
   }

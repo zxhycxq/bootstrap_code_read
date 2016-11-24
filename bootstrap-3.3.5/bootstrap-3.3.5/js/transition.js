@@ -12,17 +12,18 @@
 
   // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
   // ============================================================
-
+  //动画结束函数
   function transitionEnd() {
+    //  新建一个bootstrap的类
     var el = document.createElement('bootstrap')
-
+    //事件结束名称  各大浏览器
     var transEndEventNames = {
       WebkitTransition : 'webkitTransitionEnd',
       MozTransition    : 'transitionend',
       OTransition      : 'oTransitionEnd otransitionend',
       transition       : 'transitionend'
     }
-
+    //循环 ，如果存在，则
     for (var name in transEndEventNames) {
       if (el.style[name] !== undefined) {
         return { end: transEndEventNames[name] }

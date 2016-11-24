@@ -32,7 +32,7 @@
       selector = $this.attr('href')
       selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
-
+    //如果已经是激活状态
     if ($this.parent('li').hasClass('active')) return
 
     var $previous = $ul.find('.active:last a')
@@ -45,7 +45,7 @@
 
     $previous.trigger(hideEvent)
     $this.trigger(showEvent)
-
+    //显示与隐藏事件均被禁止
     if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return
 
     var $target = $(selector)

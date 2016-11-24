@@ -12,6 +12,12 @@
 
   // COLLAPSE PUBLIC CLASS DEFINITION
   // ================================
+/*
+ data-toggle="collapse" 添加到您想要展开或折叠的组件的链接上。
+ href 或 data-target 属性添加到父组件，它的值是子组件的 id。
+ data-parent 属性把折叠面板（accordion）的 id 添加到要展开或折叠的组件的链接上。
+
+*/
 
   var Collapse = function (element, options) {
     this.$element      = $(element)
@@ -38,23 +44,27 @@
   }
 
   Collapse.prototype.dimension = function () {
+    //  是否有 width的类
     var hasWidth = this.$element.hasClass('width')
     return hasWidth ? 'width' : 'height'
   }
 
   Collapse.prototype.show = function () {
+    //  如果动画正在运行或者已经显示了，返回。
     if (this.transitioning || this.$element.hasClass('in')) return
-
+    //查找子节点.panel下含.in, .collapsing的子节点，
     var activesData
     var actives = this.$parent && this.$parent.children('.panel').children('.in, .collapsing')
 
     if (actives && actives.length) {
+      //  读取之前以键名key存放的数据
       activesData = actives.data('bs.collapse')
       if (activesData && activesData.transitioning) return
     }
-
+    //事件开始 ，设置
     var startEvent = $.Event('show.bs.collapse')
     this.$element.trigger(startEvent)
+    //  用于判断是否已经调用过event.preventDefault()函数。
     if (startEvent.isDefaultPrevented()) return
 
     if (actives && actives.length) {
@@ -63,7 +73,7 @@
     }
 
     var dimension = this.dimension()
-
+    //aria-expanded表示展开状态。默认为undefined, 表示当前展开状态未知。
     this.$element
       .removeClass('collapse')
       .addClass('collapsing')[dimension](0)
@@ -83,7 +93,7 @@
       this.$element
         .trigger('shown.bs.collapse')
     }
-
+    //如果支持动画
     if (!$.support.transition) return complete.call(this)
 
     var scrollSize = $.camelCase(['scroll', dimension].join('-'))
@@ -132,9 +142,10 @@
   }
 
   Collapse.prototype.toggle = function () {
+      // 如果是显示，则隐藏，否则显示
     this[this.$element.hasClass('in') ? 'hide' : 'show']()
   }
-
+  //得到父元素
   Collapse.prototype.getParent = function () {
     return $(this.options.parent)
       .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
@@ -147,7 +158,7 @@
 
   Collapse.prototype.addAriaAndCollapsedClass = function ($element, $trigger) {
     var isOpen = $element.hasClass('in')
-
+    //元素扩展与否
     $element.attr('aria-expanded', isOpen)
     $trigger
       .toggleClass('collapsed', !isOpen)
