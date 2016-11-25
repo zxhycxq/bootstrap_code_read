@@ -42,7 +42,7 @@
     var showEvent = $.Event('show.bs.tab', {
       relatedTarget: $previous[0]
     })
-
+    //前一个，因此，当前 显示
     $previous.trigger(hideEvent)
     $this.trigger(showEvent)
     //显示与隐藏事件均被禁止
@@ -70,6 +70,7 @@
       && ($active.length && $active.hasClass('fade') || !!container.find('> .fade').length)
 
     function next() {
+      //    激活的，取消激活，在字节点找激活 的，取消， 扩展不可用
       $active
         .removeClass('active')
         .find('> .dropdown-menu > .active')

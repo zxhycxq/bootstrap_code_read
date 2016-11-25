@@ -24,7 +24,7 @@
   Button.DEFAULTS = {
     loadingText: 'loading...'
   }
-
+  //设定状态
   Button.prototype.setState = function (state) {
     var d    = 'disabled'
     var $el  = this.$element

@@ -22,8 +22,9 @@
   Dropdown.VERSION = '3.3.5'
 
   function getParent($this) {
+    //  找到目标元素
     var selector = $this.attr('data-target')
-
+    //如果不存在，设置href
     if (!selector) {
       selector = $this.attr('href')
       selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
@@ -99,7 +100,7 @@
 
     e.preventDefault()
     e.stopPropagation()
-
+    //已经禁用
     if ($this.is('.disabled, :disabled')) return
 
     var $parent  = getParent($this)

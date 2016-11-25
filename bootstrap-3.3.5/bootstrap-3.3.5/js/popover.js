@@ -35,7 +35,7 @@
   Popover.prototype = $.extend({}, $.fn.tooltip.Constructor.prototype)
 
   Popover.prototype.constructor = Popover
-
+  //取默认值
   Popover.prototype.getDefaults = function () {
     return Popover.DEFAULTS
   }
